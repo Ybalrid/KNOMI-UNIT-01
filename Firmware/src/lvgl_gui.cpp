@@ -8,6 +8,8 @@
 #include <lvgl_gif.h>
 #include <test.h>
 
+#include "color_settings.hpp"
+
 //显示刷新定时器
 lv_timer_t * update_timer=NULL;
 uint8_t contne = 0;
@@ -102,7 +104,7 @@ static void set_angle(void * var, int32_t v)
 
 void Open_up_animation()
 {
-    lv_style_set_arc_color(&style_spinner_open, lv_color_hex(0xFF0000)); //设置圆弧颜色
+    lv_style_set_arc_color(&style_spinner_open, lv_color_hex(knomi_main_color)); //设置圆弧颜色
     lv_style_set_arc_width(&style_spinner_open, 16);            //设置圆弧宽度；
  
     lv_style_set_arc_color(&style_bc_spinner_open, lv_color_hex(0x000000)); //设置背景圆环颜色
