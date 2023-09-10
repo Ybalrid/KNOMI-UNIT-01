@@ -986,7 +986,7 @@ void loop()
           }else if(httpswitch==3){
             http.begin("http://"+klipper_ip+"/printer/objects/query?gcode_macro%20G28"); //获取home状态
           }else if(httpswitch==4){
-            http.begin("http://"+klipper_ip+"/printer/objects/query?gcode_macro%20BED_MESH_CALIBRATE"); //获取levelling状态
+            http.begin("http://"+klipper_ip+"/printer/objects/query?gcode_macro%20PRINT_START"); //获取levelling状态
           }else{
 
           }
@@ -1093,7 +1093,7 @@ void loop()
                   httpswitch = 4;
               }else if(httpswitch == 4){   //levelling状态
 
-                  String nameStr9 = doc["result"]["status"]["gcode_macro BED_MESH_CALIBRATE"]["probing"].as<String>();
+                  String nameStr9 = doc["result"]["status"]["gcode_macro PRINT_START"]["probing"].as<String>();
                   Serial.println(nameStr9);
 
                   if(nameStr9 == "true"){
